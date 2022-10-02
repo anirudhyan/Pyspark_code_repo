@@ -1,0 +1,42 @@
+Pyspark 
+Spark 3 
+supports gpu nodes
+deeper kubernetes support 
+fast and genera engine for data processing
+splitting up by multiple machines
+
+1.RDD
+(Resilient distributed dataset)
+create an rdd with spark
+lines=sc.textFile("file:///SparkCouse/ml-100k/u.data")
+each line would be a value
+rdd=sc.parallelize([1,2,3,4])
+rdd.map(lambda x : x*x)
+
+LIbrary in spark 
+spark streaming
+Spark sql 
+Mlib
+Graph X
+
+2. Transformations on rdd
+map:use a function 1 to 1
+mapvalues:transforms every value in a key value pair rdd
+flatmap:
+filter:filtering in data
+distinct : unique values
+sample: sample from rdd
+union
+intersection
+subtract
+cartesioan
+
+3.RDD ACTIONS
+collect:
+count:
+countbyvalue:
+take:
+top:
+reduce:aggregation
+action does not create rdd it creats python objects
+
