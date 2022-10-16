@@ -28,6 +28,8 @@ distinct : unique values
 sample: sample from rdd
 union
 intersection
+keys: create rdd with keys
+values():create rdd with values
 subtract
 cartesioan
 
