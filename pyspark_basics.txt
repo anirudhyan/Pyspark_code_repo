@@ -1,0 +1,10 @@
+1. Creating a Spark session that is entry point to spark functionality
+from pyspark.sql import SparkSession
+spark = SparkSession.builder.master('yarn').appName('pyspark_learning').getOrCreate()
+# Sparksession comprises of Sparkcontext, SqlContext,HiveContext and Streaming Context in one house
+#To access the spark context use spark.SparkContext where spark is spark session object
+spark.SparkContext.appName
+spark.SparkContext.master
+
+2. Reading of Files from HDFS/S3 for different formats 
+inp_df = spark.read.format('csv').option('header',true).
