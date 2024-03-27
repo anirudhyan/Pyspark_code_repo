@@ -5,6 +5,9 @@ spark = SparkSession.builder.master('yarn').appName('pyspark_learning').getOrCre
 #To access the spark context use spark.SparkContext where spark is spark session object
 spark.SparkContext.appName
 spark.SparkContext.master
+There can be multiple spark sessions in a jvm but can have only 1 sparkcontext
 
 2. Reading of Files from HDFS/S3 for different formats 
+#spark.read method is used to create a dataframe reader object which has multiple apis to read multiple source files and format
+# Reading a CSV file
 inp_df = spark.read.format('csv').option('header',true).
