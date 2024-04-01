@@ -7,6 +7,20 @@ spark.SparkContext.appName
 spark.SparkContext.master
 There can be multiple spark sessions in a jvm but can have only 1 sparkcontext
 
+Creating Spark Dataframe using python list
+l = [['honda',45000,4.5],['tvs',35000,4.0],['bajaj',40000,3.5]]
+colms = ['bike_company','price','rating']
+ df = spark.createDataFrame(data=l,schema=colms)
+To get schema of dataframe with column names and it types
+df.printSchema()
+to show first elements of df
+df.show() 
+to show first 30 elenemst of df in non truncated format
+df.show(30,truncate=False)
+
+
+
+
 2. Reading of Files from HDFS/S3 for different formats 
 #spark.read method is used to create a dataframe reader object which has multiple apis to read multiple source files and format
 # Reading a CSV file
