@@ -1,0 +1,14 @@
+===========================================Pyspark Handle null columns in DataFrame============================================
+#Creating a spark session
+from pyspark.sql import SparkSession
+spark = SparkSession.builder.appName('drop_null_df').getOrCreate()
+#Reading a csv file
+df = spark.read.format('csv').load('s3a://test-env-s3/emp.csv').option(header,True).option(inferschema,True)
+df.show(truncate=False)
+#drop rows containing null values in any column
+df.na.drop.show()
+#use threshold to define num of non null columns in a row
+#drop rows which dosn't have at least 2 non null columns 
+df.na.drop(thresh=2).show()
+
+
